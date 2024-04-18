@@ -19,7 +19,7 @@ $f3->route('GET /', function() {
 
     // render a view page
     $view = new Template();
-    echo $view->render('views/home.html');
+    echo $view->render('views/home-page.html');
 });
 
 // run fat-free
