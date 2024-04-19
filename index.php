@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // 328/pets2/index.php
 // this is my controller
 
@@ -23,12 +23,35 @@ $f3->route('GET /', function() {
 });
 
 // Order
-$f3->route('GET /order', function() {
-    //echo '<h1>Order Page</h1>';
+$f3->route('GET|POST /order', function($f3) {
+    //check if the form has been posted
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // get the data
+        $pet = $_POST['pet'];
+        $color = $_POST['color'];
+        // validate the data
+        if (empty($pet) || empty($color)) {
+            echo "Please supply a pet type or color";
+        }
+        else { // data is valid
+            $f3->set('SESSION.pet', $pet);
+            $f3->set('SESSION.color', $color);
+            // redirect to summary
+            $f3->reroute("summary");
+        }
+    }
 
     // render a view page
     $view = new Template();
     echo $view->render('views/pet-order.html');
+});
+
+// summary
+$f3->route('GET /summary', function() {
+    // render a view page
+    $view = new Template();
+    echo $view->render('views/order-summary.html');
 });
 
 // run fat-free
