@@ -9,6 +9,11 @@ error_reporting(E_ALL);
 
 // require
 require_once('vendor/autoload.php');
+require_once('classes/pet.php');
+
+// test pet
+$myPet = new RoboticPet("dog", "blue", ["test", "test"]);
+echo $myPet->listAccessories();
 
 // instantiate the base F3 class
 $f3 = Base::instance();

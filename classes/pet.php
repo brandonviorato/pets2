@@ -10,4 +10,15 @@ class Pet
         $this->_animal = $_animal;
         $this->_color = $_color;
     }
+
+    public function getAnimal(): mixed
+    {
+        return $this->_animal;
+    }
+
+    public function getColor(): mixed
+    {
+        return $this->_color;
+    }
+
 }

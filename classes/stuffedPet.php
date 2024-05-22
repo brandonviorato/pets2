@@ -17,33 +17,9 @@ class StuffedPet extends Pet
         $this->_material = $material;
     }
 
-    public function getStuffingType()
+    // method to describe the stuffed pet
+    public function describe()
     {
-        return $this->_stuffingType;
-    }
-
-    public function setStuffingType($stuffingType): void
-    {
-        $this->_stuffingType = $stuffingType;
-    }
-
-    public function getSize()
-    {
-        return $this->_size;
-    }
-
-    public function setSize($size): void
-    {
-        $this->_size = $size;
-    }
-
-    public function getMaterial()
-    {
-        return $this->_material;
-    }
-
-    public function setMaterial($material): void
-    {
-        $this->_material = $material;
+        echo "This is a " . $this->_size . " " . $this->getColor() . " stuffed " . $this->getAnimal() . " made of " . $this->_material . " with " . $this->_stuffingType . " stuffing.\n";
     }
 }
