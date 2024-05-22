@@ -1,13 +1,20 @@
 {
-  "name": "brando20/328/pets",
+  "name": "raiuxl/328/pets",
   "authors": [
     {
       "name": "Brandon Viorato",
       "email": "viorato.brandon@student.greenriver.edu"
+    },
+    {
+      "name": "Nathan Tapia-Ramirez",
+      "email": "tapia-ramirez.nathan@student.greenriver.edu"
     }
   ],
   "require":
   {
     "bcosca/fatfree-core": "dev-master"
+  },
+  "autoload": {
+    "classmap": ["classes/"]
   }
 }
