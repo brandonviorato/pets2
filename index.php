@@ -11,8 +11,8 @@ error_reporting(E_ALL);
 require_once('vendor/autoload.php');
 
 // test pet
-$myPet = new RoboticPet("dog", "blue", ["test", "test"]);
-echo $myPet->listAccessories();
+/*$myPet = new RoboticPet("dog", "blue", ["test", "test"]);
+echo $myPet->listAccessories();*/
 
 // instantiate the base F3 class
 $f3 = Base::instance();
@@ -39,6 +39,17 @@ $f3->route('GET|POST /order', function($f3) {
             echo "Please supply a pet type or color";
         }
         else { // data is valid
+            /*$selectedValue = $_POST['pet_type'];
+            if($selectedValue == 'robotic'){
+                $roboticPet = new RoboticPet($pet,$color);
+                $f3->set('SESSION.pet', $roboticPet);
+            }else if($selectedValue == 'stuffed'){
+                $stuffedPet = new StuffedPet($pet,$color);
+                $f3->set('SESSION.pet', $stuffedPet);
+            }*/
+
+
+
             $f3->set('SESSION.pet', $pet);
             $f3->set('SESSION.color', $color);
             // redirect to summary
